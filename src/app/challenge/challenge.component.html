@@ -1,0 +1,15 @@
+<div [hidden]="!showSpinner">
+    <mat-spinner style="position: absolute; margin: 23% 45%"></mat-spinner>
+</div>
+
+<div [hidden]="showSpinner">
+    <mat-grid-list cols="2">
+        <mat-grid-tile [colspan]="1" class="left-contender">
+            <img src="{{ leftContender.url }}" (click)="vote(leftContender.id)">
+        </mat-grid-tile>
+    
+        <mat-grid-tile [colspan]="1" class="right-contender">
+            <img src="{{ rightContender.url }}" (click)="vote(rightContender.id)">
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

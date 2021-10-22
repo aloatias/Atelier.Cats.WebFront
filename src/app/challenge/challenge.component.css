@@ -1,0 +1,32 @@
+.left-contender {
+    background-color: #ECF0F1;
+}
+
+.right-contender {
+    background-color: #F7F7F7;
+}
+
+.left-contender img {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    /* border-top-right-radius: 50%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%; */
+    display: inline-block;
+    border-width: thick;
+    border-color: #F7F7F7;
+}
+
+.right-contender img {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    border-width: thick;
+    border-color: #ECF0F1;
+}
+
+img:hover {
+    cursor: pointer;
+}
