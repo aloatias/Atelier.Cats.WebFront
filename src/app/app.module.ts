@@ -27,7 +27,7 @@ const appRoutes: Routes = [
     AppComponent,
     ChallengeComponent,
     VotesComponent,
-    NodatamessageComponent
+    NodatamessageComponent,
     VotesComponent
   ],
   imports: [
