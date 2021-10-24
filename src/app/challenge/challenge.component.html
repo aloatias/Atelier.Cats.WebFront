@@ -3,7 +3,7 @@
         <mat-spinner style="position: absolute; margin: 23% 45%"></mat-spinner>
     </div>
 
-    <div [hidden]="showSpinner">
+    <div [hidden]="showSpinner||showNoDataMessage">
         <div class="cat-mash">
             <img style="width: 200px; height: 200px;" src="../../assets/images/cat-mash.png">
         </div>
@@ -32,3 +32,5 @@
         </div>
     </div>
 </div>
+
+<app-nodatamessage [hidden]="!showNoDataMessage"></app-nodatamessage>
