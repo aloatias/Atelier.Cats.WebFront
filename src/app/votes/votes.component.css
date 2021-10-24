@@ -1,7 +1,20 @@
+.votes-container {
+  margin: 30px 15px 30px 15px;
+}
+
+.votes-title {
+  text-align: center;
+  color: #365165;
+}
+
 .winner-card {
-    max-width: 400px;
-  }
+  max-width: 400px;
+}
   
-  .winner-header-image {
-    background-size: cover;
-  }
+.winner-header-image {
+  background-size: cover;
+}
+
+.winner-image {
+  height: 400px;
+}

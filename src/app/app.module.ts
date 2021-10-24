@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { VotesComponent } from './votes/votes.component';
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatTooltipModule,
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,

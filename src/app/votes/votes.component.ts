@@ -9,6 +9,7 @@ import { IWinner } from '../Models/IWinner';
 })
 export class VotesComponent implements OnInit {
   public cats: IWinner[] = new Array<IWinner>();
+  public showSpinner: boolean = true;
 
   constructor(private catService: CatService) { }
 
@@ -16,8 +17,7 @@ export class VotesComponent implements OnInit {
     this.catService.getVotes()
       .subscribe(votes => {
         this.cats = votes
-
-        console.log(votes);
+        this.showSpinner = false;
       });
   }
 }

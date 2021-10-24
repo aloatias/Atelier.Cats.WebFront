@@ -1,3 +1,11 @@
+.cat-mash {
+    position: absolute;
+    z-index: 1;
+    width: 99%;
+    text-align: center;
+    margin-left: 14px;
+}
+
 .left-contender {
     background-color: #ECF0F1;
 }
@@ -27,6 +35,30 @@
     border-color: #ECF0F1;
 }
 
-img:hover {
+.left-contender img:hover, .right-contender img:hover {
     cursor: pointer;
+}
+
+.see-votes-button {
+    position: relative;
+    height: 50px;
+    text-align: center;
+    margin: -100px auto auto auto;
+    width: 50%;
+}
+
+.see-votes-button div {
+    background-color: #F7F7F7;
+    max-width: 300px;
+    margin: auto auto auto auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.total-votes {
+    font-size: small;
+}
+
+.votes-link {
+    text-decoration: none;
 }

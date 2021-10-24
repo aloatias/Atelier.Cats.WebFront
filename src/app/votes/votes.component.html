@@ -1,28 +1,35 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4"
-            *ngFor="let cat of cats; let i=index">
+<div [hidden]="!showSpinner">
+    <mat-spinner style="position: absolute; margin: 23% 45%"></mat-spinner>
+</div>
+
+<div class="votes-container" [hidden]="showSpinner">
+    <h1 class="votes-title">Votes</h1>
+
+    <mat-grid-list cols="1" rowHeight="700px">
+        <mat-grid-tile [colspan]="1" *ngFor="let cat of cats">
             <mat-card class="winner-card">
                 <mat-card-header>
-                    <div mat-card-avatar class="winner-header-image" style="background-image: url('{{ cat.url }}');"></div>
-                    <mat-card-title>#{{i + 1}} - Shiba Inu</mat-card-title>
+                    <div mat-card-avatar class="winner-header-image" style="background-image: url('{{ cat.url }}');">
+                    </div>
+                    <mat-card-title>{{ cat.name}} </mat-card-title>
                     <mat-card-subtitle>{{ cat.votes }} {{ cat.votes > 1 ? "votes" : "vote" }}</mat-card-subtitle>
                 </mat-card-header>
     
-                <img mat-card-image src="{{ cat.url }}" alt="Photo of little cat">
+                <img class="winner-image" mat-card-image src="{{ cat.url }}" alt="Photo of little cat">
     
                 <mat-card-content>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id justo vel sapien congue efficitur
-                        id at turpis. Ut et nisl elit. Aenean nec magna lobortis, tincidunt sem egestas, sodales dui. Etiam
-                        dui mi, consectetur vel faucibus vel, ultrices ut orci. Duis nunc justo, tincidunt eget lectus eu,
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id justo vel sapien congue
+                        efficitur
+                        id at turpis. Ut et nisl elit. Aenean nec magna lobortis, tincidunt sem egestas, sodales dui.
+                        Etiam
+                        dui mi, consectetur vel faucibus vel, ultrices ut orci. Duis nunc justo, tincidunt eget lectus
+                        eu,
                         facilisis finibus velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
                         inceptos himenaeos. Praesent vel fermentum enim. Morbi a auctor neque.
                     </p>
                 </mat-card-content>
             </mat-card>
-        </div>
-        <div class="col-sm-4"></div>
-    </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
