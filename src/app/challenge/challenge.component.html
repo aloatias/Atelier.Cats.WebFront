@@ -1,0 +1,36 @@
+<div class="challenge-container">
+    <div [hidden]="!showSpinner">
+        <mat-spinner style="position: absolute; margin: 23% 45%"></mat-spinner>
+    </div>
+
+    <div [hidden]="showSpinner||showNoDataMessage">
+        <div class="cat-mash">
+            <img style="width: 200px; height: 200px;" src="../../assets/images/cat-mash.png">
+        </div>
+
+        <mat-grid-list cols="2">
+            <mat-grid-tile [colspan]="1" class="left-contender">
+                <img matTooltip="Vote for {{ leftContender.name }}" src="{{ leftContender.url }}" (click)="vote(leftContender.id)">
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="1" class="right-contender">
+                <img matTooltip="Vote for {{ rightContender.name }}" src="{{ rightContender.url }}" (click)="vote(rightContender.id)">
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <div class="see-votes-button" matTooltip="See rankings">
+            <a class="votes-link" routerLink="/cat/votes" routerLinkActive="active">
+                <div>
+                    <div>
+                        <span>See the most beautiful cats</span>
+                    </div>
+                    <div>
+                        <span class="total-votes">{{ totalVotes }} votes</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<app-nodatamessage [hidden]="!showNoDataMessage"></app-nodatamessage>
