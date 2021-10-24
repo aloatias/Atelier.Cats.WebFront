@@ -10,7 +10,7 @@ import { IWinner } from '../Models/IWinner';
 export class VotesComponent implements OnInit {
   public cats: IWinner[] = new Array<IWinner>();
   public showSpinner: boolean = true;
-  public showNoDataMessage: boolean = true;
+  public showNoDataMessage: boolean = false;
 
   constructor(private catService: CatService) { }
 
@@ -23,6 +23,8 @@ export class VotesComponent implements OnInit {
 
           this.cats = votes
           this.showNoDataMessage = false;
+        } else {
+          this.showNoDataMessage = true;
         }
 
         this.showSpinner = false;
