@@ -2,7 +2,7 @@
     <mat-spinner style="position: absolute; margin: 23% 45%"></mat-spinner>
 </div>
 
-<div class="votes-container" [hidden]="showSpinner">
+<div class="votes-container" [hidden]="showSpinner||showNoDataMessage">
     <h1 class="votes-title">Votes</h1>
 
     <mat-grid-list cols="1" rowHeight="700px">
@@ -33,3 +33,5 @@
         </mat-grid-tile>
     </mat-grid-list>
 </div>
+
+<app-nodatamessage [hidden]="!showNoDataMessage"></app-nodatamessage>

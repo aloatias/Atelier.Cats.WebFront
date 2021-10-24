@@ -14,6 +14,7 @@ export class ChallengeComponent implements OnInit {
   public leftContender: ICat = new Cat();
   public rightContender: ICat = new Cat();
   public showSpinner: boolean = true;
+  public showNoDataMessage: boolean = true;
   public totalVotes: number = 0;
 
   constructor(
@@ -29,8 +30,12 @@ export class ChallengeComponent implements OnInit {
     this.catService.getContenders()
       .subscribe(
         contenders => {
-          this.leftContender = contenders.contenderOne;
-          this.rightContender = contenders.contenderTwo;
+          console.log(contenders);
+          if (contenders != null) {
+            this.leftContender = contenders.contenderOne;
+            this.rightContender = contenders.contenderTwo;
+            this.showNoDataMessage = false;
+          }
 
           this.showSpinner = false;
         });
