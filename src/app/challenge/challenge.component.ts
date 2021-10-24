@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CatService } from '../cat.service';
-import { ChallengeService } from '../challenge.service';
 import { ChallengeResult } from '../Models/ChallengeResult';
-import { Contender } from '../Models/Contender';
-import { IContender } from '../Models/IContender';
+import { Cat } from '../Models/Cat';
+import { ICat } from '../Models/ICat';
 
 @Component({
   selector: 'app-challenge',
@@ -12,14 +11,13 @@ import { IContender } from '../Models/IContender';
 })
 
 export class ChallengeComponent implements OnInit {
-  public leftContender: IContender = new Contender();
-  public rightContender: IContender = new Contender();
+  public leftContender: ICat = new Cat();
+  public rightContender: ICat = new Cat();
   public showSpinner: boolean = true;
   public totalVotes: number = 0;
 
   constructor(
-    private catService: CatService,
-    private challengeService: ChallengeService) { }
+    private catService: CatService) { }
 
   ngOnInit(): void {
     this.getContenders();
@@ -39,9 +37,9 @@ export class ChallengeComponent implements OnInit {
   }
 
   getVotes() {
-    this.challengeService.getVotes()
-    .subscribe(votes => {
-      this.totalVotes = votes;
+    this.catService.getVotesCount()
+    .subscribe(votesCount => {
+      this.totalVotes = votesCount;
     });
   }
 
@@ -53,7 +51,7 @@ export class ChallengeComponent implements OnInit {
     result.challengerTwoId = this.rightContender.id;
     result.winnerId = winnderId;
 
-    this.challengeService.setChallengeResult(result)
+    this.catService.setChallengeResult(result)
       .subscribe(() => {
         this.showSpinner = false;
         this.getContenders();

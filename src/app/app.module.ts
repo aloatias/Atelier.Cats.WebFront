@@ -8,12 +8,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
+
 import { HttpClientModule } from '@angular/common/http';
+import { VotesComponent } from './votes/votes.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'cat/challenge', pathMatch: 'full' },
+  { path: 'cat/challenge', component: ChallengeComponent },
+  { path: 'cat/votes', component: VotesComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChallengeComponent
+    ChallengeComponent,
+    VotesComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +32,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatGridListModule,
     MatProgressSpinnerModule,
+    MatCardModule,
     HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
