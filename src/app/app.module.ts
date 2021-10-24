@@ -11,7 +11,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-
 import { HttpClientModule } from '@angular/common/http';
 import { VotesComponent } from './votes/votes.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -29,6 +28,7 @@ const appRoutes: Routes = [
     ChallengeComponent,
     VotesComponent,
     NodatamessageComponent
+    VotesComponent
   ],
   imports: [
     BrowserModule,
