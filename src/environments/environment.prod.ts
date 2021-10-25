@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: "https://ase-atelier-cat-prod-westeu-01.azurewebsites.net"
 };

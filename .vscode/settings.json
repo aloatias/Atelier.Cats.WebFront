@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a896dc79-0330-45de-aec9-fab42564be8b/resourceGroups/rgp-atelier-cat-prod-westeu-01/providers/Microsoft.Web/sites/ase-atelier-cat-prod-westeu-02",
+    "appService.deploySubpath": "dist\\atelier-cats-front"
+}
