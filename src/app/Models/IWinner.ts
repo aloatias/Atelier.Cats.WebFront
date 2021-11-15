@@ -1,5 +1,5 @@
-import { ICat } from "./ICat";
-
-export interface IWinner extends ICat {
+export interface IWinner {
+    name: string;
+    url: string;
     votes: number;
 }
