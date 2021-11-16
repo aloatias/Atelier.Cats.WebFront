@@ -50,14 +50,12 @@ export class ChallengeComponent implements OnInit {
     });
   }
 
-  vote(winnderId: string): void {
+  vote(winnerId: string): void {
     this.showSpinner = true;
 
-    let result = new ChallengeResult();
-    result.challengerOneId = this.leftContender.id;
-    result.challengerTwoId = this.rightContender.id;
-    result.winnerId = winnderId;
-
+    let loser = winnerId == this.leftContender.id ? this.rightContender.id : this.leftContender.id;
+    let result = new ChallengeResult(winnerId, loser);
+    
     this.catService.setChallengeResult(result)
       .subscribe(() => {
         this.showSpinner = false;
