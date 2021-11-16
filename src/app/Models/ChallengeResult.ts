@@ -1,7 +1,12 @@
 import { IChallengeResult } from "./IChallengeResult";
 
 export class ChallengeResult implements IChallengeResult {
-    challengerOneId: string = "";
-    challengerTwoId: string = "";
-    winnerId: string = "";
+    winnerId: string;
+    loserId: string;
+
+    constructor(winnerId: string, loserId: string)
+    {
+        this.winnerId = winnerId;
+        this.loserId = loserId;
+    }
 }

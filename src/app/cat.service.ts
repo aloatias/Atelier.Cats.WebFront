@@ -20,23 +20,24 @@ const httpOptions = {
 export class CatService {
   constructor(
     private _httpClient: HttpClient) { }
-    getContenders() : Observable<ICatsCouple> {
-      return this._httpClient
-        .get<ICatsCouple>(environment.apiUrl + GLobalUrls.getContenders, httpOptions);
-    }
 
-    getVotes() {
-      return this._httpClient
+  getContenders(): Observable<ICatsCouple> {
+    return this._httpClient
+      .get<ICatsCouple>(environment.apiUrl + GLobalUrls.getContenders, httpOptions);
+  }
+
+  getVotes() : Observable<IWinner[]> {
+    return this._httpClient
       .get<IWinner[]>(environment.apiUrl + GLobalUrls.getVotes, httpOptions);
-    }
+  }
 
-    getVotesCount() {
-      return this._httpClient
+  getVotesCount(): Observable<number> {
+    return this._httpClient
       .get<number>(environment.apiUrl + GLobalUrls.getVotesCount, httpOptions);
-    }
+  }
 
-    setChallengeResult(challengeResult: IChallengeResult ) {
-      return this._httpClient
-        .post<ICatsCouple>(environment.apiUrl + GLobalUrls.setChallengeResult, challengeResult, httpOptions);
-    }
+  setChallengeResult(challengeResult: IChallengeResult) {
+    return this._httpClient
+      .post(environment.apiUrl + GLobalUrls.setChallengeResult, challengeResult, httpOptions);
+  }
 }

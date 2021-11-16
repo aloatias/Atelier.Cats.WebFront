@@ -17,15 +17,8 @@ export class VotesComponent implements OnInit {
   ngOnInit(): void {
     this.catService.getVotes()
       .subscribe(votes => {
-        if (votes.length > 0)
-        {
-          console.log(votes);
-
-          this.cats = votes
-          this.showNoDataMessage = false;
-        } else {
-          this.showNoDataMessage = true;
-        }
+        this.cats = votes
+        this.showNoDataMessage = this.cats.length === 0;
 
         this.showSpinner = false;
       });
