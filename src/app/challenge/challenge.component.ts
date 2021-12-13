@@ -45,9 +45,9 @@ export class ChallengeComponent implements OnInit {
 
   getVotes() {
     this.catService.getVotesCount()
-    .subscribe(votesCount => {
-      this.totalVotes = votesCount;
-    });
+      .subscribe(votesCount => {
+        this.totalVotes = votesCount;
+      });
   }
 
   vote(winnerId: string): void {
